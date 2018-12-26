@@ -85,7 +85,7 @@ For the
    1. Initially i tried to solve this using DFS , as this was the best use case
       but this approach was taking more time.
    2. Then the second approach i took for this problem is, at every step we are comparing either left and bottom , and taking minimum among them and adding to the current sum . I tried to the same approach, but the answer was not matching , there was about 2000 or more difference.
-      The reason was, i was trying to caluculate the minimum of the numbers instead it has to minimal path.
+      The reason was, i was trying to caluculate the minimum of the numbers instead it has to minimal sum.
    3. Finally, i tried to read this https://www.mathblog.dk/project-euler-81-find-the-minimal-path-sum-from-the-top-left-to-the-bottom-right-by-moving-right-and-down/
       based on this understading, i though dynamic programming would be a best use case here.
       i followed a different approach from the article mentioned above.
