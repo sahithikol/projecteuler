@@ -1,5 +1,14 @@
 <html>
-  <head> </head>
+  <head>
+    <style>
+      label {
+        font-weight: bold;
+      }
+      section {
+        padding: 10px;
+      }
+    </style>
+  </head>
   <body>
     <section class="container">
       <button data-name="nthprime">GetNthPrime</button>
@@ -31,35 +40,57 @@
         };
 
         function caluculateNthPrime() {
-          const result = document.querySelector(".result");
+          const resultContainer = document.querySelector(".result");
           let start = window.performance.now();
-          const res = primeModule.getNthPrimeNumber(10001);
+          const result = primeModule.getNthPrimeNumber(10001);
           let end = window.performance.now();
-          result.innerHTML = `<section>The time taken for generating <a href="https://projecteuler.net/problem=7">10001 st Prime Number</a>
-                  is ${end -
-                    start} milliseconds and the result is ${res}</section> `;
+          resultContainer.innerHTML += getResultTemplate(
+            7,
+            "10001st Prime Number",
+            end - start,
+            result
+          );
         }
 
         function getLetterCounts() {
-          const result = document.querySelector(".result");
+          const resultContainer = document.querySelector(".result");
           let start = window.performance.now();
-          const res = letterModule.generateLetterCounts(1000);
+          const result = letterModule.generateLetterCounts(1000);
           let end = window.performance.now();
-          result.innerHTML += `<section>The time taken for generating <a href="https://projecteuler.net/problem=17">
-              Number Letter Counts</a>
-                  is ${end -
-                    start} milliseconds and the result is ${res}</section> `;
+          resultContainer.innerHTML += getResultTemplate(
+            17,
+            "Number Letter Counts",
+            end - start,
+            result
+          );
         }
 
         function runGridSum() {
-          const result = document.querySelector(".result");
+          const resultContainer = document.querySelector(".result");
           let start = window.performance.now();
-          const res = gridModule.caluculateGridSum();
+          const result = gridModule.caluculateGridSum();
           let end = window.performance.now();
-          result.innerHTML += `<section>The time taken for generating <a href="https://projecteuler.net/problem=81">
-              Path sum: two ways</a>
-                  is ${end -
-                    start} milliseconds and the result is ${res}</section> `;
+          resultContainer.innerHTML += getResultTemplate(
+            81,
+            "Path sum: two ways",
+            end - start,
+            result
+          );
+        }
+
+        function getResultTemplate(questionId, title, timeTaken, result) {
+          return `<section>
+            <h2>
+                <a href="https://projecteuler.net/problem=${questionId}">${title}</a>
+            </h2>
+            <section>
+            <label>Time Taken: </label> ${timeTaken} milliseconds</section>
+            <section>
+            <label>Result:</label>
+                ${result}
+            </section>
+            </section>
+            </section>`;
         }
       })();
     </script>

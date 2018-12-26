@@ -3,7 +3,7 @@
 */
 var letterModule = (function() {
   // hashmap for the letters
-  var numberMap = new Map();
+  let numberMap = new Map();
   numberMap.set(1, "one");
   numberMap.set(2, "two");
   numberMap.set(3, "three");
@@ -41,9 +41,9 @@ var letterModule = (function() {
   // helper utility for determing
   // lettercount below 100
   function getCountBelow100(index) {
-    var tens = Math.floor(index / 10);
-    var remainder = index % 10;
-    var tensUnit = tens > 0 ? tens * 10 : 0;
+    let tens = Math.floor(index / 10);
+    let remainder = index % 10;
+    let tensUnit = tens > 0 ? tens * 10 : 0;
     if (remainder === 0) {
       return numberMap.get(tensUnit).length;
     }
@@ -58,17 +58,17 @@ var letterModule = (function() {
     } else if (index < 100) {
       return getCountBelow100(index);
     } else if (index < 1000) {
-      var hundreds = Math.floor(index / 100);
-      var remainder = index % 100;
-      var hundredsUnitLen = "hundred".length;
-      var andLen = "and".length;
+      let hundreds = Math.floor(index / 100);
+      let remainder = index % 100;
+      let hundredsUnitLen = "hundred".length;
+      let andLen = "and".length;
 
       if (hundreds < 999) {
-        var baseLength = getCountBelow20(hundreds) + hundredsUnitLen;
+        let baseLength = getCountBelow20(hundreds) + hundredsUnitLen;
         if (remainder === 0) {
           return baseLength;
         } else {
-          var remCount =
+          let remCount =
             remainder <= 20
               ? getCountBelow20(remainder)
               : getCountBelow100(remainder);
@@ -76,7 +76,7 @@ var letterModule = (function() {
         }
       }
     } else {
-      var thousands = Math.floor(index / 1000);
+      let thousands = Math.floor(index / 1000);
       return getCountBelow20(thousands) + "thousand".length;
     }
   }
@@ -90,7 +90,7 @@ var letterModule = (function() {
     }
 
     let sum = 0;
-    for (var index = 1; index <= range; index++) {
+    for (let index = 1; index <= range; index++) {
       sum += getLetterCountForIndex(index);
     }
 
