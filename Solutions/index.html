@@ -1,0 +1,70 @@
+<html>
+  <head> </head>
+  <body>
+    <section class="container">
+      <button data-name="nthprime">GetNthPrime</button>
+      <button data-name="letterCount">LetterCount</button>
+      <button data-name="gridSum">GridSum</button>
+    </section>
+    <section class="result"></section>
+
+    <script>
+      (function() {
+        window.onload = function() {
+          const container = document.querySelector(".container");
+          const nthPrimeBtn = document.querySelector("#nthprime");
+
+          container.addEventListener("click", function(ev) {
+            const targetElement = ev.target;
+            const elementType = targetElement.tagName.toLowerCase();
+            const dataName = targetElement.dataset.name;
+            if (elementType === "button") {
+              if (dataName === "nthprime") {
+                caluculateNthPrime();
+              } else if (dataName === "letterCount") {
+                getLetterCounts();
+              } else if (dataName === "gridSum") {
+                runGridSum();
+              }
+            }
+          });
+        };
+
+        function caluculateNthPrime() {
+          const result = document.querySelector(".result");
+          let start = window.performance.now();
+          const res = primeModule.getNthPrimeNumber(10001);
+          let end = window.performance.now();
+          result.innerHTML = `<section>The time taken for generating <a href="https://projecteuler.net/problem=7">10001 st Prime Number</a>
+                  is ${end -
+                    start} milliseconds and the result is ${res}</section> `;
+        }
+
+        function getLetterCounts() {
+          const result = document.querySelector(".result");
+          let start = window.performance.now();
+          const res = letterModule.generateLetterCounts(1000);
+          let end = window.performance.now();
+          result.innerHTML += `<section>The time taken for generating <a href="https://projecteuler.net/problem=17">
+              Number Letter Counts</a>
+                  is ${end -
+                    start} milliseconds and the result is ${res}</section> `;
+        }
+
+        function runGridSum() {
+          const result = document.querySelector(".result");
+          let start = window.performance.now();
+          const res = gridModule.caluculateGridSum();
+          let end = window.performance.now();
+          result.innerHTML += `<section>The time taken for generating <a href="https://projecteuler.net/problem=81">
+              Path sum: two ways</a>
+                  is ${end -
+                    start} milliseconds and the result is ${res}</section> `;
+        }
+      })();
+    </script>
+    <script src="NthPrime.js" type="text/javascript"></script>
+    <script src="LetterCounts.js" type="text/javascript"></script>
+    <script src="GridSum.js" type="text/javascript"></script>
+  </body>
+</html>
