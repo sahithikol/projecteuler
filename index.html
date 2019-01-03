@@ -68,7 +68,7 @@
         function runGridSum() {
           const resultContainer = document.querySelector(".result");
           let start = window.performance.now();
-          const result = gridModule.caluculateGridSum();
+          const result = gridModule.caluculateGridSum({ testFor80by80: true });
           let end = window.performance.now();
           resultContainer.innerHTML += getResultTemplate(
             81,

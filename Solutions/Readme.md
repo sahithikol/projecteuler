@@ -55,6 +55,8 @@ Within the projecteuler, please run npm run test
 It would show a snapshot of what all tests passed and failed
 for each of the problem
 
+and please open the https://sahithikol.github.io/projecteuler/report.html to see the test results
+
 #### Why you chose the problems you did?
 
 #### 10001st prime number
