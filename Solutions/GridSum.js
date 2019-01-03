@@ -183,5 +183,8 @@ var gridModule = (function() {
     caluculateGridSum
   };
 })();
-
-module.exports = gridModule;
+if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+  module.exports = gridModule;
+} else {
+  window.gridModule = gridModule;
+}

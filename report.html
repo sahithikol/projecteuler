@@ -427,10 +427,10 @@ body {
                     <li class="passes">passes: <em>22</em></li>
                     <li class="pending">pending: <em>0</em></li>
                     <li class="failures">failures: <em>0</em></li>
-                    <li class="duration">duration: <em>23ms</em></li>
+                    <li class="duration">duration: <em>27ms</em></li>
                 </ul>
             </div>
-            <ul id="report"><li class="suite"><h1>Tests for GridSums</h1><ul><li class="test pass fast"><h2>Testing for empty array<span class="duration">0ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ input: [] });
+            <ul id="report"><li class="suite"><h1>Tests for GridSums</h1><ul><li class="test pass fast"><h2>Testing for empty array<span class="duration">1ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ input: [] });
 assert.equal(gridSum, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing for 1*1 size array<span class="duration">0ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ input: [[1]] });
 assert.equal(gridSum, 1);</code></pre></li><li class="test pass fast"><h2>Testing for input where row and column are of different length<span class="duration">0ms</span></h2><pre><code>const matrix = [
   [131, 673, 234],
@@ -457,20 +457,20 @@ assert.equal(gridSum, -14);</code></pre></li><li class="test pass fast"><h2>Test
 ];
 const gridSum = gridModule.caluculateGridSum({ input: matrix });
 assert.equal(gridSum, 2427);</code></pre></li><li class="test pass fast"><h2>Testing GridSum for 80*80 matrix<span class="duration">1ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ testFor80by80: true });
-assert.equal(gridSum, 427337);</code></pre></li><li class="test pass fast"><h2>Testing for nonarray inputs<span class="duration">0ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ input: -1 });
+assert.equal(gridSum, 427337);</code></pre></li><li class="test pass fast"><h2>Testing for nonarray inputs<span class="duration">1ms</span></h2><pre><code>const gridSum = gridModule.caluculateGridSum({ input: -1 });
 assert.equal(gridSum, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing for array inputs where each item is not an array <span class="duration">0ms</span></h2><pre><code>const matrix = [[131, 673], 201];
 const gridSum = gridModule.caluculateGridSum({ input: matrix });
 assert.equal(gridSum, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing for array inputs where each item in the array is not a valid number <span class="duration">0ms</span></h2><pre><code>const matrix = [[&#x22;131&#x22;, &#x22;673&#x22;], [&#x22;201&#x22;, &#x22;hello&#x22;]];
 const gridSum = gridModule.caluculateGridSum({ input: matrix });
-assert.equal(gridSum, errorMessage);</code></pre></li></ul></li><li class="suite"><h1>Tests for LetterCountsTest</h1><ul><li class="test pass fast"><h2>Testing for Valid Range input 1000<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(1000);
+assert.equal(gridSum, errorMessage);</code></pre></li></ul></li><li class="suite"><h1>Tests for LetterCountsTest</h1><ul><li class="test pass fast"><h2>Testing for Valid Range input 1000<span class="duration">1ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(1000);
 assert.equal(letterCount, 21124);</code></pre></li><li class="test pass fast"><h2>Testing for Valid Range input greater than 1000<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(100000);
 assert.equal(letterCount, rangeError);</code></pre></li><li class="test pass fast"><h2>Testing for negative input numbers<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(-1);
 assert.equal(letterCount, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing if input is string<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(&#x22;abc&#x22;);
 assert.equal(letterCount, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing for empty input<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts();
 assert.equal(letterCount, errorMessage);</code></pre></li><li class="test pass fast"><h2>Testing for array input<span class="duration">0ms</span></h2><pre><code>const letterCount = letterModule.generateLetterCounts(&#x22;[&#x27;av&#x27;]&#x22;);
 assert.equal(letterCount, errorMessage);</code></pre></li></ul></li><li class="suite"><h1>Tests for NthPrime</h1><ul><li class="test pass fast"><h2>Testing for 5th Prime number<span class="duration">0ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(5);
-assert.equal(nthPrime, 11);</code></pre></li><li class="test pass fast"><h2>Testing for 10001 Prime umber<span class="duration">14ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(10001);
-assert.equal(nthPrime, 104743);</code></pre></li><li class="test pass fast"><h2>Testing for negative input numbers<span class="duration">2ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(-1);
+assert.equal(nthPrime, 11);</code></pre></li><li class="test pass fast"><h2>Testing for 10001 Prime umber<span class="duration">16ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(10001);
+assert.equal(nthPrime, 104743);</code></pre></li><li class="test pass fast"><h2>Testing for negative input numbers<span class="duration">1ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(-1);
 assert.equal(nthPrime, error);</code></pre></li><li class="test pass fast"><h2>Testing if input is string<span class="duration">0ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber(&#x22;abc&#x22;);
 assert.equal(nthPrime, error);</code></pre></li><li class="test pass fast"><h2>Testing for empty input<span class="duration">0ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber();
 assert.equal(nthPrime, error);</code></pre></li><li class="test pass fast"><h2>Testing for array input<span class="duration">0ms</span></h2><pre><code>const nthPrime = primeModule.getNthPrimeNumber([]);

@@ -107,4 +107,8 @@ var letterModule = (function() {
   };
 })();
 
-module.exports = letterModule;
+if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+  module.exports = letterModule;
+} else {
+  window.letterModule = letterModule;
+}

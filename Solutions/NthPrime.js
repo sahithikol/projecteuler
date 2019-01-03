@@ -62,4 +62,8 @@ var primeModule = (function nthPrime() {
   };
 })();
 
-module.exports = primeModule;
+if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+  module.exports = primeModule;
+} else {
+  window.primeModule = primeModule;
+}
