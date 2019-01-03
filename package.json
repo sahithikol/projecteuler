@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/*.test.js"
+    "test": "mocha ./tests/*.test.js --reporter mocha-simple-html-reporter --reporter-options output=report.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sahithikol/projecteuler#readme",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "mocha-simple-html-reporter": "^1.1.0"
   }
 }
