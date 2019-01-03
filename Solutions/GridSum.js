@@ -100,12 +100,59 @@ var gridModule = (function() {
     return result;
   }
 
+  function isMultiDimensionalMatrix(input) {
+    if (!input.length) {
+      return false;
+    }
+    const rows = input.length;
+    for (let i = 0; i < rows; i++) {
+      if (!typeof input[i] === "object") {
+        return false;
+      } else {
+        const columns = input[i].length;
+        if (rows !== columns) {
+          return false;
+        } else if (!isValidArray(input[i])) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  function isValidArray(input) {
+    const inputLen = input.length;
+    for (let i = 0; i < inputLen; i++) {
+      if (!Number(input[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  const errorMessage = "Not Valid Input";
+
   // caluculating grid sum
   // using dp approach for this
   // this method accepts input, if input is available, it would take input else
   /// it generates array for the matrixString(80*80 arra)
-  function caluculateGridSum(input) {
-    let matrix = input ? input : getArrayFromString();
+  function caluculateGridSum({ input, testFor80by80 = false }) {
+    let matrix;
+    if (testFor80by80) {
+      matrix = getArrayFromString();
+    } else {
+      if (
+        !input ||
+        typeof input !== "object" ||
+        !isMultiDimensionalMatrix(input)
+      ) {
+        return errorMessage;
+      }
+
+      matrix = input;
+    }
+
     let matrixLen = matrix.length;
 
     let sumMatrix = [];
@@ -136,3 +183,5 @@ var gridModule = (function() {
     caluculateGridSum
   };
 })();
+
+module.exports = gridModule;

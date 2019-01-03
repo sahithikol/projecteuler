@@ -49,6 +49,12 @@ The time taken for generating Path sum: two ways is 3.899999996065162 millisecon
 
 ---
 
+#### Instructions to Test the code
+
+Within the projecteuler, please run npm run test
+It would show a snapshot of what all tests passed and failed
+for each of the problem
+
 #### Why you chose the problems you did?
 
 #### 10001st prime number

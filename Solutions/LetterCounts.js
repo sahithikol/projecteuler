@@ -85,18 +85,26 @@ var letterModule = (function() {
   // looping over numbers to generate letter counts
   // using internal/utility methods internally
   function generateLetterCounts(range) {
+    const errorMessage = "Not Valid Input";
+    const rangeError = "Input range is greater than 1000";
     if (!range || range < 0 || isNaN(range)) {
-      return 0;
+      return errorMessage;
+    } else if (range > 1000) {
+      return rangeError;
     }
 
-    let sum = 0;
-    for (let index = 1; index <= range; index++) {
-      sum += getLetterCountForIndex(index);
-    }
+    if (range <= 1000) {
+      let sum = 0;
+      for (let index = 1; index <= range; index++) {
+        sum += getLetterCountForIndex(index);
+      }
 
-    return sum;
+      return sum;
+    }
   }
   return {
     generateLetterCounts
   };
 })();
+
+module.exports = letterModule;

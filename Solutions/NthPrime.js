@@ -5,15 +5,22 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10 001st prime number?
 */
 var primeModule = (function nthPrime() {
+  const errorMessage = "Not Valid Input";
   //in a range of numbers checking if a number is prime
   // if so pushig to the array and returning the index of the
   // 10001st prime number
   function getNthPrimeNumber(index) {
     // checking for negative cases and undefined index cases
-    if (!index) {
-      return -1;
-    } else if (index === 0) {
-      return 0;
+    // floating and string input cases
+    if (
+      !index ||
+      !isFinite(index) ||
+      typeof index === "object" ||
+      index === 0 ||
+      index < 0 ||
+      !Number.isInteger(index)
+    ) {
+      return errorMessage;
     }
 
     const primeNumbersArr = [];
@@ -54,3 +61,5 @@ var primeModule = (function nthPrime() {
     getNthPrimeNumber
   };
 })();
+
+module.exports = primeModule;
